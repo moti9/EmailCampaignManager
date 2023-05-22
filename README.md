@@ -17,7 +17,7 @@ The Email Campaign Manager is a web application that allows you to create and ma
 ### Clone the repository:
 
 ```bash
-$ git clone https://github.com/moti9/CoRider
+$ git clone https://github.com/moti9/EmailCampaignManager
 ```
 
 ---
