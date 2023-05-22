@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ campaign.subject }}</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #ffffff;
+      }
+
+      h1 {
+        color: #333333;
+      }
+
+      p {
+        margin-bottom: 20px;
+        line-height: 1.5;
+      }
+
+      a {
+        color: #337ab7;
+        text-decoration: none;
+      }
+
+      /* Campaign-specific styles */
+
+      .campaign-container {
+        background-color: #f8f8f8;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      .campaign-subject {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .campaign-preview {
+        color: #888888;
+        margin-bottom: 10px;
+      }
+
+      .campaign-content {
+        margin-bottom: 20px;
+      }
+
+      .campaign-link {
+        display: block;
+        color: #337ab7;
+        margin-top: 20px;
+      }
+      .footer {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to our daily campaigns</h1>
+
+      <div class="campaign-container">
+        <h2 class="campaign-subject">{{ campaign.subject }}</h2>
+        <p class="campaign-preview">
+          {{ campaign.preview_text }}<a
+            class="campaign-link"
+            href="{{ campaign.article_url }}"
+            >Read more</a
+          >
+        </p>
+        <div class="campaign-content">{{ campaign.html_content | safe}}</div>
+        <div>{{campaign.plain_text}}</div>
+      </div>
+
+      <div class="footer">
+        <p>
+          If you no longer wish to receive these emails, you can
+          <a
+            href="http://{{domain}}/unsubscribe/?email={{user_email}}&first_name={{user_name}}"
+            >unsubscribe here</a
+          >
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
